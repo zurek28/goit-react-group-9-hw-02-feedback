@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+.button {
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Courgette';
+  background-color: rgb(104, 83, 65);
+  border: 2px rgb(194, 190, 190);
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  margin-right: 5px;
+}
+
+.button:hover {
+  background-color: rgb(196, 152, 114);
+}
+
+.button:active {
+  -webkit-box-shadow: inset 0px 0px 13px -4px rgba(66, 68, 90, 1);
+  -moz-box-shadow: inset 0px 0px 13px -4px rgba(66, 68, 90, 1);
+  box-shadow: inset 0px 0px 13px -4px rgba(66, 68, 90, 1);
+}

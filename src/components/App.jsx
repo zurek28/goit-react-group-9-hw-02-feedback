@@ -17,21 +17,13 @@ export class App extends Component {
   }
 
   handleClick = e => {
-    const name = e.target.name;
-
-    let newValue;
-    newValue = this.state[name] + 1;
-
-    const newState = {
-      [name]: newValue,
-    };
-
-    this.setState(newState);
+    this.setState(prevState => ({
+      [e.target.name]: prevState[e.target.name] + 1,
+    }));
   };
 
   countTotalFeedback = () => {
-    const totalFeedback = this.state.good + this.state.neutral + this.state.bad;
-    return totalFeedback;
+    return this.state.good + this.state.neutral + this.state.bad;
   };
 
   countPositiveFeedbackPercentage = () => {
@@ -45,7 +37,7 @@ export class App extends Component {
       <div className={css.wrapper}>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.handleClick}
           />
         </Section>

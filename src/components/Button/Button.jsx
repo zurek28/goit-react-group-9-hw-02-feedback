@@ -4,18 +4,16 @@ import css from './Button.module.css';
 
 export class Button extends Component {
   render() {
-    const { name, handleClick } = this.props;
+    const { name, onClick } = this.props;
     return (
-      <>
-        <button className={css.button} name={name} onClick={handleClick}>
-          {name.charAt(0).toUpperCase() + name.slice(1)}
-        </button>
-      </>
+      <button className={css.button} name={name} onClick={onClick}>
+        {name.charAt(0).toUpperCase() + name.slice(1)}
+      </button>
     );
   }
 }
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

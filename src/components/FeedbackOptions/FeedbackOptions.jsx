@@ -9,7 +9,7 @@ export class FeedbackOptions extends Component {
     return (
       <div>
         {options.map(option => (
-          <Button key={option} name={option} handleClick={onLeaveFeedback} />
+          <Button key={option} name={option} onClick={onLeaveFeedback} />
         ))}
       </div>
     );
@@ -18,5 +18,5 @@ export class FeedbackOptions extends Component {
 
 FeedbackOptions.propTypes = {
   onLeaveFeedback: PropTypes.func.isRequired,
-  option: PropTypes.arrayOf(PropTypes.string.isRequired),
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
